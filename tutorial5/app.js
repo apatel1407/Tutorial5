@@ -105,9 +105,9 @@ app.post('/add', (req, res) => {
             email: email,
             firstName: firstName
         };
-
+        userList = userList.push(newAddedUser)
         //Adding the new user to the file by pushing it to the userList.
-        writeToFile(userList.push(newAddedUser));
+        writeToFile(userList);
 
         //Success message.
         res.status(200).json({

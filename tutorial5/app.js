@@ -101,11 +101,12 @@ app.post('/add', (req, res) => {
 
         //Storing the increemented id, new email, new password to newAddedUser variable.
         const newAddedUser = {
-            id: (++lengthOfUserList).toString(),
+            id: (lengthOfUserList + 1).toString(),
             email: email,
             firstName: firstName
         };
-        userList = userList.push(newAddedUser)
+        userList.push(newAddedUser)
+
         //Adding the new user to the file by pushing it to the userList.
         writeToFile(userList);
 
